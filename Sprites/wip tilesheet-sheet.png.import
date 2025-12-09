@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da47hfj68ujte"
-path="res://.godot/imported/wip tilesheet.png-45d880e49e2458a2f07266995c2f4248.ctex"
+uid="uid://dbgqqj3tt6oj8"
+path="res://.godot/imported/wip tilesheet-sheet.png-1659286230381471fa976a10543c18d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/wip tilesheet.png"
-dest_files=["res://.godot/imported/wip tilesheet.png-45d880e49e2458a2f07266995c2f4248.ctex"]
+source_file="res://Sprites/wip tilesheet-sheet.png"
+dest_files=["res://.godot/imported/wip tilesheet-sheet.png-1659286230381471fa976a10543c18d2.ctex"]
 
 [params]
 
