@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dltidsh5ps1ma"]
+
+[ext_resource type="Texture2D" uid="uid://041qqelog3fk" path="res://Sprites/harvest button1.png" id="1_bhmri"]
+[ext_resource type="Texture2D" uid="uid://bho580wsn5qe4" path="res://Sprites/harvest button2.png" id="2_4evj4"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 8.0
+texture_normal = ExtResource("1_bhmri")
+texture_pressed = ExtResource("2_4evj4")
