@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 func _on_wheat_harvest() -> void:
 	await get_tree().create_timer(.8).timeout
-	wheat += round((((randi() % 4 + 3)*mult)+bonus))
+	wheat += round((((randi() % 4 + 3)+bonus)*mult))
 
 
 
