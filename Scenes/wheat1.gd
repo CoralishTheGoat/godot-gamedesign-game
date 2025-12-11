@@ -1,4 +1,5 @@
 extends AnimatedSprite2D
+
 var grown
 signal grow
 signal harvest

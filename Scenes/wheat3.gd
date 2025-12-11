@@ -9,6 +9,7 @@ func _ready() -> void:
 	grown = true
 
 
+@warning_ignore("unused_parameter")
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event is InputEventMouseButton && event.pressed):
 			if grown == false && growbutton == 1:
@@ -22,7 +23,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 					self.play("Harvest")
 					await get_tree().create_timer(.5).timeout
 					harvest.emit()
-
 
 
 func _on_grow_button_toggled(toggled_on: bool) -> void:

@@ -1,14 +1,20 @@
-[gd_scene load_steps=15 format=4 uid="uid://dhf6m6xbet45b"]
+[gd_scene load_steps=19 format=4 uid="uid://dhf6m6xbet45b"]
 
 [ext_resource type="Script" uid="uid://dwlbvnycxhvdf" path="res://Scenes/game.gd" id="1_wowpa"]
 [ext_resource type="Texture2D" uid="uid://dbgqqj3tt6oj8" path="res://Sprites/wip tilesheet-sheet.png" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://c7n1qh4gbun3p" path="res://Scenes/Wheat.tscn" id="4_3dryh"]
+[ext_resource type="Script" uid="uid://cuk135dl1dtya" path="res://Scenes/wheat1.gd" id="4_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://dcsn7v14te32t" path="res://Scenes/Grow Button.tscn" id="4_wowpa"]
 [ext_resource type="Script" uid="uid://bksaginrc5eni" path="res://Scenes/grow_button.gd" id="5_v158k"]
 [ext_resource type="PackedScene" uid="uid://dltidsh5ps1ma" path="res://Scenes/Harvest Button.tscn" id="5_wowpa"]
 [ext_resource type="FontFile" uid="uid://dmxgarimbhhn2" path="res://Qager-zrlmw.ttf" id="6_i6g32"]
+[ext_resource type="Script" uid="uid://cvcrud1u0olav" path="res://Scenes/wheat3.gd" id="6_rfjv2"]
 [ext_resource type="Script" uid="uid://bwpuvnimjosh6" path="res://Scenes/wps_label.gd" id="7_1l0tm"]
+[ext_resource type="Script" uid="uid://dd67rmtu4wnax" path="res://Scenes/wheat4.gd" id="7_1phco"]
+[ext_resource type="ButtonGroup" uid="uid://c5vajfcj1fdkt" path="res://Scenes/buttongroup1.tres" id="7_o5yvi"]
+[ext_resource type="Script" uid="uid://dldvoykpqwkla" path="res://Scenes/wheat5.gd" id="8_nb51f"]
 [ext_resource type="Theme" uid="uid://doqn17orb6ya1" path="res://Scenes/wheat theme.tres" id="9_h4fw4"]
+[ext_resource type="Script" uid="uid://bq3n7r3hek007" path="res://Scenes/wheat2.gd" id="12_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6g32"]
 texture = ExtResource("2_wowpa")
@@ -28,12 +34,6 @@ texture = ExtResource("2_wowpa")
 [sub_resource type="TileSet" id="TileSet_1l0tm"]
 sources/0 = SubResource("TileSetAtlasSource_i6g32")
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_v158k"]
-allow_unpress = true
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_h4fw4"]
-allow_unpress = true
-
 [sub_resource type="Theme" id="Theme_i6g32"]
 
 [node name="game" type="Node2D"]
@@ -47,7 +47,27 @@ tile_map_data = PackedByteArray("AAD4//z/AAALAAAAAAD4//7/AAAEAAAAAAD4//3/AAAEAAA
 tile_set = SubResource("TileSet_1l0tm")
 
 [node name="Wheat" parent="." instance=ExtResource("4_3dryh")]
-position = Vector2(-127, 37)
+position = Vector2(-124, 40)
+
+[node name="Wheat2" parent="Wheat" instance=ExtResource("4_3dryh")]
+position = Vector2(30, 0)
+script = ExtResource("4_ldgsr")
+
+[node name="Wheat3" parent="Wheat" instance=ExtResource("4_3dryh")]
+position = Vector2(60, 0)
+script = ExtResource("12_rku1e")
+
+[node name="Wheat3" parent="Wheat/Wheat3" instance=ExtResource("4_3dryh")]
+position = Vector2(30, 0)
+script = ExtResource("6_rfjv2")
+
+[node name="Wheat3" parent="Wheat/Wheat3/Wheat3" instance=ExtResource("4_3dryh")]
+position = Vector2(30, 0)
+script = ExtResource("7_1phco")
+
+[node name="Wheat3" parent="Wheat/Wheat3/Wheat3/Wheat3" instance=ExtResource("4_3dryh")]
+position = Vector2(30, 0)
+script = ExtResource("8_nb51f")
 
 [node name="Grow Button" parent="." instance=ExtResource("4_wowpa")]
 offset_left = -127.0
@@ -55,7 +75,7 @@ offset_top = -79.0
 offset_right = -95.0
 offset_bottom = -63.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_v158k")
+button_group = ExtResource("7_o5yvi")
 script = ExtResource("5_v158k")
 
 [node name="HarvestButton" parent="." instance=ExtResource("5_wowpa")]
@@ -64,17 +84,17 @@ offset_top = -79.0
 offset_right = -127.0
 offset_bottom = -63.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_h4fw4")
+button_group = ExtResource("7_o5yvi")
 
 [node name="WheatLabel" type="Label" parent="."]
-offset_left = 50.0
+offset_left = 49.999996
 offset_top = -76.00001
-offset_right = 189.0
+offset_right = 211.0
 offset_bottom = -58.000008
-scale = Vector2(0.59740424, 0.5713748)
+scale = Vector2(0.57460237, 0.65816855)
 theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
-text = "Wheat: 1,000,000"
+text = "Wheat: 100,000,000"
 
 [node name="MultLabel" type="Label" parent="."]
 offset_left = 65.0
@@ -109,41 +129,67 @@ script = ExtResource("7_1l0tm")
 
 [node name="Mult Test Button" type="Button" parent="."]
 offset_left = 64.0
-offset_top = -46.000004
-offset_right = 308.0
-offset_bottom = -22.000004
-scale = Vector2(0.32137668, 0.52424884)
+offset_top = -30.0
+offset_right = 346.0
+offset_bottom = -6.0
+scale = Vector2(0.28026605, 0.54367137)
 theme = SubResource("Theme_i6g32")
 theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 theme_override_font_sizes/font_size = 16
-text = "mult upgrade   price:100,000"
+text = "mult upgrade +0.2   price:100,000"
+alignment = 0
 
 [node name="Bonus Test Button" type="Button" parent="."]
 offset_left = 64.0
-offset_top = -30.0
-offset_right = 308.0
-offset_bottom = -6.0
-scale = Vector2(0.321, 0.517)
+offset_top = -46.0
+offset_right = 346.0
+offset_bottom = -22.0
+scale = Vector2(0.28, 0.518)
 theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
-text = "bonus test button +1"
+text = "bonus upgrade +1   price:100,000"
+alignment = 0
 
 [node name="WPS Test Button" type="Button" parent="."]
 offset_left = 64.0
 offset_top = -14.0
-offset_right = 308.0
+offset_right = 346.0
 offset_bottom = 10.0
-scale = Vector2(0.321, 0.517)
+scale = Vector2(0.28, 0.455)
 theme = ExtResource("9_h4fw4")
 theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
-text = "w/sec test button + 1"
+text = "W/S upgrade +1   price:100,000"
+alignment = 0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="harvest" from="Wheat" to="." method="_on_wheat_harvest"]
+[connection signal="harvest" from="Wheat/Wheat2" to="." method="_on_wheat_2_harvest"]
+[connection signal="harvest" from="Wheat/Wheat3" to="." method="_on_wheat_2_harvest"]
+[connection signal="harvest" from="Wheat/Wheat3" to="." method="_on_wheat_3_harvest"]
+[connection signal="harvest" from="Wheat/Wheat3/Wheat3" to="." method="_on_wheat_3_harvest"]
+[connection signal="harvest" from="Wheat/Wheat3/Wheat3/Wheat3" to="." method="_on_wheat_3_harvest"]
+[connection signal="harvest" from="Wheat/Wheat3/Wheat3/Wheat3/Wheat3" to="." method="_on_wheat_3_harvest"]
+[connection signal="toggled" from="Grow Button" to="." method="_on_grow_button_toggled"]
 [connection signal="toggled" from="Grow Button" to="Wheat" method="_on_grow_button_toggled"]
 [connection signal="toggled" from="Grow Button" to="Grow Button" method="_on_toggled"]
+[connection signal="toggled" from="Grow Button" to="Wheat/Wheat2" method="_on_grow_button_toggled"]
+[connection signal="toggled" from="Grow Button" to="Wheat/Wheat3" method="_on_grow_button_toggled"]
+[connection signal="toggled" from="Grow Button" to="Wheat/Wheat3/Wheat3" method="_on_grow_button_toggled"]
+[connection signal="toggled" from="Grow Button" to="Wheat/Wheat3/Wheat3/Wheat3" method="_on_grow_button_toggled"]
+[connection signal="toggled" from="Grow Button" to="Wheat/Wheat3/Wheat3/Wheat3/Wheat3" method="_on_grow_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="." method="_on_harvest_button_toggled"]
 [connection signal="toggled" from="HarvestButton" to="Wheat" method="_on_harvest_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="Wheat/Wheat2" method="_on_harvest_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="Wheat/Wheat3" method="_on_harvest_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="Wheat/Wheat3/Wheat3" method="_on_harvest_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="Wheat/Wheat3/Wheat3/Wheat3" method="_on_harvest_button_toggled"]
+[connection signal="toggled" from="HarvestButton" to="Wheat/Wheat3/Wheat3/Wheat3/Wheat3" method="_on_harvest_button_toggled"]
 [connection signal="pressed" from="Mult Test Button" to="." method="_on_mult_test_button_pressed"]
-[connection signal="button_down" from="Bonus Test Button" to="." method="_on_bonus_test_button_button_down"]
+[connection signal="pressed" from="Bonus Test Button" to="." method="_on_bonus_test_button_pressed"]
 [connection signal="button_down" from="WPS Test Button" to="." method="_on_bonus_test_button_button_down"]
+[connection signal="pressed" from="WPS Test Button" to="." method="_on_wps_test_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
