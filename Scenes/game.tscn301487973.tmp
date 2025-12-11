@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dhf6m6xbet45b"]
+[gd_scene load_steps=14 format=4 uid="uid://dhf6m6xbet45b"]
 
 [ext_resource type="Script" uid="uid://dwlbvnycxhvdf" path="res://Scenes/game.gd" id="1_wowpa"]
 [ext_resource type="Texture2D" uid="uid://dbgqqj3tt6oj8" path="res://Sprites/wip tilesheet-sheet.png" id="2_wowpa"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dltidsh5ps1ma" path="res://Scenes/Harvest Button.tscn" id="5_wowpa"]
 [ext_resource type="FontFile" uid="uid://dmxgarimbhhn2" path="res://Qager-zrlmw.ttf" id="6_i6g32"]
 [ext_resource type="Script" uid="uid://bwpuvnimjosh6" path="res://Scenes/wps_label.gd" id="7_1l0tm"]
-[ext_resource type="Theme" uid="uid://doqn17orb6ya1" path="res://Scenes/wheat theme.tres" id="9_h4fw4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6g32"]
 texture = ExtResource("2_wowpa")
@@ -72,7 +71,6 @@ offset_top = -76.00001
 offset_right = 189.0
 offset_bottom = -58.000008
 scale = Vector2(0.59740424, 0.5713748)
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "Wheat: 1,000,000"
 
@@ -82,7 +80,6 @@ offset_top = 28.0
 offset_right = 204.0
 offset_bottom = 46.0
 scale = Vector2(0.59740424, 0.5713748)
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "Mult:"
 
@@ -92,7 +89,6 @@ offset_top = 18.0
 offset_right = 204.0
 offset_bottom = 36.0
 scale = Vector2(0.59740424, 0.5713748)
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "Bonus:"
 
@@ -102,41 +98,36 @@ offset_top = 39.0
 offset_right = 204.0
 offset_bottom = 57.0
 scale = Vector2(0.59740424, 0.5713748)
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "W/Sec:"
 script = ExtResource("7_1l0tm")
 
 [node name="Mult Test Button" type="Button" parent="."]
-offset_left = 64.0
-offset_top = -46.000004
-offset_right = 308.0
-offset_bottom = -22.000004
-scale = Vector2(0.32137668, 0.52424884)
+offset_left = 77.000015
+offset_top = -44.999992
+offset_right = 198.00002
+offset_bottom = -20.999992
+scale = Vector2(0.5182675, 0.45657703)
 theme = SubResource("Theme_i6g32")
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
 theme_override_fonts/font = ExtResource("6_i6g32")
 theme_override_font_sizes/font_size = 16
-text = "mult upgrade   price:100,000"
+text = "mult test +0.1"
 
 [node name="Bonus Test Button" type="Button" parent="."]
-offset_left = 64.0
-offset_top = -30.0
-offset_right = 308.0
-offset_bottom = -6.0
-scale = Vector2(0.321, 0.517)
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
+offset_left = 78.0
+offset_top = -31.999998
+offset_right = 273.0
+offset_bottom = -7.999998
+scale = Vector2(0.2926325, 0.4723696)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "bonus test button +1"
 
 [node name="WPS Test Button" type="Button" parent="."]
-offset_left = 64.0
-offset_top = -14.0
-offset_right = 308.0
-offset_bottom = 10.0
-scale = Vector2(0.321, 0.517)
-theme = ExtResource("9_h4fw4")
-theme_override_colors/font_color = Color(0.91764706, 0.8509804, 0.654902, 1)
+offset_left = 78.00001
+offset_top = -18.999998
+offset_right = 265.94907
+offset_bottom = 5.000002
+scale = Vector2(0.2926325, 0.4723696)
 theme_override_fonts/font = ExtResource("6_i6g32")
 text = "w/sec test button + 1"
 

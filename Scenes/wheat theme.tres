@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://doqn17orb6ya1"]
+
+[ext_resource type="FontFile" uid="uid://dmxgarimbhhn2" path="res://Qager-zrlmw.ttf" id="1_tugfk"]
+
+[resource]
+default_font = ExtResource("1_tugfk")
+/colors/wheat = Color(0.91764706, 0.8509804, 0.654902, 1)
